@@ -88,10 +88,15 @@ app.use(
 // npm run build will build your frontend app, and it will the optimized version of your app
 app.use(express.static(path.join(__dirname, "frontend/dist")));
 
+app.get("/home", (req, res) => {
+	//res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
+	response.send("<h2>Home</h2>");
+});
 app.get("*", (req, res) => {
 	//res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
 	response.send("<h2>Hello</h2>");
 });
+
 
 // Modified server startup
 await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
