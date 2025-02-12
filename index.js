@@ -74,7 +74,7 @@ await server.start();
 app.use(
 	"/graphql",
 	cors({
-		origin: "http://localhost:3000",
+		//origin: "http://localhost:3000",
 		credentials: true,configurePassport
 	}),
 	express.json(),
@@ -86,7 +86,7 @@ app.use(
 );
 
 // npm run build will build your frontend app, and it will the optimized version of your app
-app.use(express.static(path.join(__dirname, "frontend/dist")));
+//app.use(express.static(path.join(__dirname, "frontend/dist")));
 
 app.get("/home", (req, res) => {
 	//res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
